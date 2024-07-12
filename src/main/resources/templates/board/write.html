@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--GetMapping에서 보낸 빈 board를 받아 값을 입력하고 post한다.-->
+<form th:action="@{/board/write}" th:object="${board}" method="post">
+    제목: <input type="text" th:field="*{title}">
+    내용: <input type="text" th:field="*{content}">
+    <input type="submit" value="작성하기">
+</form>
+<form th:action="@{/board/write}" method="post">
+    제목: <input type="text" name="title">
+    내용: <input type="text" name="content">
+    <input type="submit" value="작성하기">
+</form>
+</body>
+</html>

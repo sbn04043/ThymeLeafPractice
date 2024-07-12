@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- css는 해당 html에서 적용시켜야 한다. -->
+    <!--      <link rel="stylesheet" th:href="@{/css/header.css}">  -->
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+<div th:replace="~{asset :: header(user=${user})}"></div>
+<h1>HomeController에서 보내준 인덱스 페이지</h1>
+<h1 th:text="${user}"></h1>
+<a th:href="@{/board/showAll}">게시판으로</a>
+<div th:replace="~{asset :: footer}"></div>
+</body>
+</html>
